@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var input = prompt("请输入密码");
+        var reg = new RegExp("^\\d{6}$");
+        var bool = reg.test(input);
+        if (bool) {
+            document.write("<h1 style='color:green'>密码输入正确</h1>");
+        } else
+            document.write("<h1 style='color:red'>密码输入错误 </h1>");
+        var str = "明明喜欢我 却不告诉我 别理我 我想静静 静静是谁 你先告诉我 明明是谁";
+        var ar=str.match('静静');
+        console.log(ar);
+        var re=new RegExp("明明|静静","g");
+        var arr;
+        //先尝试找一次
+        do{
+            arr=re.exec(str);
+            if(arr!=null){
+                document.write(`位置${arr.index} 关键词 ${arr[0]}<br>`);
+            }else document.write('无敏感词');
+        }while(arr!=null)
+        /*
+            arr[同match不加g情况
+            0:关键词    index:下表位置]
+        */
+        //如果找到就输出关键词的位置和内容
+               
+        //只要arr!=null ，就说明找到了。就继续找下一次
+        
+    </script>
+</body>
+
+</html>

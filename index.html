@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Access-Control-Allow-Origin" content="">
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta name="referrer" content="no-referrer">
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<!-- <body onload="onCreate()"> -->
+<body>
+    <!-- 背景 -->
+    <div>
+        <img id="bg-image" src="http://webs.zcjun.com/background/random_img" onerror="this.src='./assets/images/404.jpg'">
+        <div class="bg-image-pattern"></div>
+    </div>
+    <!-- 音乐播放器  -->
+    <div class="player">
+        <audio id="bgm" src=""></audio>
+        <!-- 播放器 -->
+        <div class="player-panel">
+            <!-- shadow -->
+            <div></div>
+            <!-- panel -->
+            <div>
+                <!-- 歌曲封面、暂停、切歌 -->
+                <div class="player-main">
+                    <div>
+                        <div id="dp" onclick="playBGM()">
+                            <div>
+                                <i id="b-play" class="fa fa-play"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="fa fa-fast-forward"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div> <span><span itemid="currentTime">00:00</span>/<span id="b-duration">00:00</span></span></div>
+                        <div></div>
+                    </div>
+                    <div><img id="b-picture" src="./assets/images/eg-img.jpg" alt=""></div>
+                </div>
+                <div></div>
+                <!-- 歌曲信息 -->
+                <div class="player-info">
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <i class="fa fa-music"></i>
+                                </div>
+                            </div>
+                            <div>
+
+                                <span id="b-title"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div>
+                                    <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <span id="b-artist"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="hr-music">
+                    <hr align='center'>
+
+                </div>
+                <!-- 歌曲控件 -->
+                <div class="player-control">
+                    <ul>
+                        <li>
+                            <div>
+                                <div>
+                                    <div>
+                                        <i class="fa fa-volume-up fa-rotate-180"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <span>词</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <i class="fa fa-pie-chart fa-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 其他控件 -->
+                <div class="player-other">
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 播放器收缩按钮 -->
+        <div></div>
+        <!-- 歌单 -->
+        <div></div>
+        <!-- 歌词 -->
+        <div></div>
+    </div>
+
+</body>
+<script>
+
+</script>
+<canvas id='monesFollowingEffect'></canvas>
+
+<script type="text/javascript" src="lib/monesFollowingEffects.js"></script>
+<script type="text/javascript" src="lib/atomactive​.js"></script>
+<script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ulScores">
+        <li>54</li>
+        <li>21</li>
+        <li>100</li>
+        <li>42</li>
+
+
+    </ul>
+    <script>
+        var mail = "yccddd@163.com";
+        var arr = mail.split('');
+        var uname = arr[0];
+        var domail = arr[1];
+        document.write(`uname=${uname}<br>domail=${domail}<br>`);
+
+
+        // 切割字符串
+        var chars = mail.split("");
+        //翻转字符串并无缝拼接
+        document.write(`reverse:${chars.reverse().join("")}`);
+        // 对ulScores排倒序
+        var ulScore=document.getElementById('ulScores');
+        var html=ulScore.innerHTML;
+        var reg=new RegExp('^\\s*<li>|</li>\\s*&','g');
+        html=html.replace(reg,'');
+        console.log(html);
+        var rrg=new RegExp("</li>\\s*<li>")
+        var score=html.split(rrg);
+        var arr=score.sort(function (a,b){return b-a});
+            ulScore.innerHTML='<li>'+arr.join('</li><li>')+'</li>'
+    </script>
+</body>
+
+</html>

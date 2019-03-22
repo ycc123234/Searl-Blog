@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var t=0;
+        function eat(){
+            t+=0.3
+            document.write(`我吃饭用了0.3hour<hr>`);
+        }
+        function work(){
+            t+=0.8;
+            document.write(`我睡觉用了0.8hour<hr>`);
+            var err=1;
+            if(err){
+                let t=new Date();
+               alert(`${t.toLocaleDateString()}'无法工作了'`);
+            }
+ 
+        }
+        eat();
+        work();
+        document.write(`今天一共花了${t}hour<hr>`);
+    </script>
+</body>
+</html>

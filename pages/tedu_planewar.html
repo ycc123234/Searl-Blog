@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+        function Enemy(fname,speed){
+        
+            this.fname=fname;
+            this.speed=speed;
+
+        }
+        Enemy.prototype={
+            fly:function(){
+                console.log(`单位${this.fname}正在以${this.speed}/km速度飞行`);
+                
+            }
+        }
+        function Plane ( fname,speed,score){
+            Enemy.call(this,fname,speed);
+            this.score=score;
+        }
+        Plane.prototype={
+            getScore:function(){
+                console.log(`单位:${this.fname}  获得分数${this.speed}`);
+            }
+
+        }
+        Object.setPrototypeOf(Plane.prototype,Enemy.prototype);
+        function Bee(){
+
+        }
+        Bee.prototype={
+            getAward:function(){
+
+            }
+        }
+        var f16=new Plane('F16',1000,5);
+        f16.getScore();
+        f16.fly();
+        </script>
+</body>
+</html>

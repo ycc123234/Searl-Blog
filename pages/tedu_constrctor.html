@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // "use strict"
+
+        function Student(eid, ename, salary, age) {
+            Object.defineProperties(this, {
+                eid: {
+                    value: eid,
+                    writable: false,
+                    enumerable: true,
+                },
+                ename: {
+                    value: ename,
+                    writable: true,
+                    enumerable: true,
+                },
+                salary: {
+                    value: salary,
+                    writable: true,
+                    enumerable: false,
+                },
+                _age: {
+                    writable: true,
+                    enumerable: false,
+                },
+
+            })
+            this.age = age;
+            Object.seal(this);
+        }
+        
+        Object.defineProperty(Student.prototype, 'age', {
+            get: function () {
+                return this._age;
+            },
+            set: function (age) {
+                if (age > 18 && age < 65) {
+                    this._age = age;
+                } else {
+                    throw new Error("难受~");
+                }
+            },
+            this:Object.seal(this)
+            // enumerable: true,
+
+        })
+            // Object.seal(this)
+        var stsu = new Student(1, 'searl', 2000000, 19  );
+        // stsu.Age=-2;
+        // console.log(stsu.__proto__);
+        
+    </script>
+</body>
+
+</html>
