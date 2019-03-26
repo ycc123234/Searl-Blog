@@ -1,2 +1,6 @@
 gggggggggggggggggggggggggggggggggggggggggggggg
+<<<<<<< HEAD
 this is a bug
+=======
+HOLLOW KNIGHT
+>>>>>>> dev
