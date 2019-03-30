@@ -37,16 +37,16 @@
     white-space: nowrap; }
 
 .cursor-link, a:hover {
-  cursor: url("../assets/images/link.cur"), auto; }
+  cursor: url("../images/link.cur"), auto; }
 
 .cursor-miku, .player .player-panel {
-  cursor: url("../assets/images/miku.png"), auto; }
+  cursor: url("../images/miku.png"), auto; }
 
 @font-face {
   font-family: pixelFont;
-  src: url("../assets/fonts/pixel-china.ttf"); }
+  src: url("../fonts/pixel-china.ttf"); }
 body {
-  cursor: url("../assets/images/default.cur"), auto;
+  cursor: url("../images/default.cur"), auto;
   position: fixed;
   z-index: 10;
   font-family: pixelFont; }
