@@ -9,8 +9,8 @@ var server=express();
 server.listen(8080);
 
 //trusteeship static resources
-server.use(express.static('./views'));
-server.use(express.static('./assets'));
+server.use(express.static(__dirname+'/views'));
+server.use(express.static(__dirname+'/assets'));
 server.use(bodyParser.urlencoded({extended:false}))
 //mount routers
 server.use('/music',musicRoute);
