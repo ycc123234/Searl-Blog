@@ -1,0 +1,33 @@
+{
+  "name": "searl-blog",
+  "version": "1.0.0",
+  "description": "*",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycc123234/Searl-Blog.git"
+  },
+  "keywords": [
+    "searl"
+  ],
+  "author": "searl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ycc123234/Searl-Blog/issues"
+  },
+  "homepage": "https://github.com/ycc123234/Searl-Blog#readme"
+}

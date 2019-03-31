@@ -1,14 +1,16 @@
 //add  npm module
 const express=require('express');
 const bodyParser=require('body-parser');
+//add local routes
+const musicRoute=require('./routes/music');
 
-//add routes
+//open server
 var server=express();
 server.listen(8080);
-//open server
-server.use();
 
 //trusteeship static resources
-
+server.use(express.static('./views'));
+server.use(express.static('./assets'));
+server.use(bodyParser.urlencoded({extended:false}))
 //mount routers
-
+server.use('/music',musicRoute);
