@@ -3,9 +3,10 @@ const request=require('request');
 var router=express.Router();
 
 router.get('/list',(req,res)=>{
-    request('http://localhost:8888/SearlBlog/song',(err,res,body)=>{if(err)throw err;
-        console.log('statusCode',res&&res.statusCode);
-        console.log('body:',body);
+    request('http://localhost:8888/SearlBlog/song',(error,response,body)=>{if(error)throw error;
+        console.log('statusCode',response&&response.statusCode);
+        console.log(response.statusCode);
+        res.send(body);
     })
 })
 

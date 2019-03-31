@@ -1,7 +1,7 @@
 "use strict"
 const NO_BGM = 0;
 const PLAY_BGM = 1;
-const BGM_URL = 'http://localhost:8888/SearlBlog/song';
+const BGM_URL = '/music/list';
 class Music {
     constructor(url, status) {
         Object.defineProperties(this, {
@@ -36,12 +36,13 @@ class Music {
         this.initBGM(this.url);
     }
     initBGM(...params) {
-        console.log(this.url, '<<<+=========');
-        console.log(params, '=============')
+        // console.log(this.url, '<<<+=========');
+        // console.log(params, '=============')
+        //if params is url ,params request body.else return music json
         if (params[0] == BGM_URL) {
             this.getBGM(params[0]);
         } else {
-            console.log(typeof params[0], '----------------');
+            console.log( params[0]);
         }
 
     }
