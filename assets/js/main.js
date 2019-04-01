@@ -1,10 +1,9 @@
+
 // "use strict"
-var music = null;
-class Closer {
-    constructor(...param) {
-
-    }
-
+var music;
+//闭包状态类
+class Clousure {
+    constructor(...param) {}
     static open() {
         var isOpen = false;
         return function (...param) {
@@ -16,21 +15,25 @@ class Closer {
             return isOpen;
         }
     }
-}
-const onStart = function () {
-    var proOpen = Closer.open();
-    var promise;
-    objectPro(proOpen,promise);
+    //时间管理者
+    static timer(){
+        var mSrc=false;
+        return function(bool){
+            if(bool){
+                mSrc=bool
+            }
+            console.log('mSrc',mSrc)
+            return mSrc;
+        }
+    }
 }
 
-function pro(pro) {
-    pro.then(() => { console.log(music,'########') });
-}
-//外部类加载器
-function objectPro(proOpen,promise) {
+
+//外部类加载管道
+var objectPro = function (proOpen, promise) {
     if (!proOpen()) {
         promise = new Promise(function (open) {
-            function musicPro() {
+            musicPro = function () {
                 return new Promise(function (open) {
                     //Music加载器
                     var script = document.createElement("script");
@@ -42,14 +45,78 @@ function objectPro(proOpen,promise) {
                     script.onload = function () {
                         music = new Music('/music/list', 1);
                         music.init();
+                        
                         open();
                     }
                 })
             }
-            musicPro().then(function () { proOpen(true); open(); objectPro(proOpen,promise); });
+            musicPro().then(function () { proOpen(true); open(); objectPro(proOpen, promise); });
 
         })
     } else {
-        pro(promise);
+        SuperPromise(promise);
     }
 }
+//音乐进度计时器
+var musicTimer = function () {
+    setInterval(function () {
+        console.log(bgm.currentTime, bgm.duration);
+        if (bgm.currentTime >= bgm.duration) {
+            clearInterval(musicTimer)
+        }
+    }, 1000)
+}
+
+
+//音乐信息注入器
+var musicInit = function () {
+    console.log('=======')
+    bgm.src = music.data[0].url;
+    musicTimer();
+    b_title.textContent = music.data[0].title;
+    b_artist.textContent = music.data[0].artist;
+    b_picture.src = music.data[0].picture;
+}
+
+//音乐src监视器
+var musicSrcListener=function(){
+     setTimeout(function(){
+        console.log('wait');
+        if(music.data!==undefined){
+            musicInit();
+        }else{
+            musicSrcListener();
+        }
+    },5);
+}
+
+/*****************   ↑↑制造↑↑   |   ↓↓使用↓↓     *************** */
+//音乐加载器
+var musicLoad=function(){
+    musicSrcListener();
+}
+//事件生成器
+dp.addEventListener('click', function () { bgm.play(); }, false)
+
+//总线程管道
+var SuperPromise = function (promise) {
+    // 外部类加载管道
+    promise.then(musicSrcListener()).then();
+}
+
+//启动器
+const onStart = function () {
+    /*********系统初始化外部类********* */   
+    var proOpen = Clousure.open();  //状态信息码生成
+    var promise;                    //容器生成
+    objectPro(proOpen, promise);    //注入信息
+
+    /*********系统加载外部类*********** */ 
+    musicLoad();
+    
+
+    /******************************** */
+}
+
+//启动测试器
+onStart();

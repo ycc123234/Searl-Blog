@@ -24,14 +24,13 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
+
 
 </head>
 
 <!-- <body onload="onCreate()"> -->
 
-<body onload="onStart()">
+<body >
     <!-- 背景 -->
     <div>
         <img id="bg-image" src="http://webs.zcjun.com/background/random_img"
@@ -50,9 +49,9 @@
                 <!-- 歌曲封面、暂停、切歌 -->
                 <div class="player-main">
                     <div>
-                        <div id="dp" onclick="playBGM()">
+                        <div id="dp" >
                             <div>
-                                <i id="b-play" class="fa fa-play"></i>
+                                <i  class="fa fa-play"></i>
                             </div>
                         </div>
                         <div>
@@ -63,11 +62,11 @@
 
                     </div>
                     <div>
-                        <div> <span><span itemid="currentTime">00:00</span>/<span id="b-duration">00:00</span></span>
+                        <div> <span><span id="currentTime">00:00</span>/<span id="b-duration">00:00</span></span>
                         </div>
                         <div></div>
                     </div>
-                    <div><img id="b-picture" src="/images/eg-img.jpg" alt=""></div>
+                    <div><img id="b_picture" src="/images/eg-img.jpg" alt=""></div>
                 </div>
                 <div></div>
                 <!-- 歌曲信息 -->
@@ -81,7 +80,7 @@
                             </div>
                             <div>
 
-                                <span id="b-title"></span>
+                                <span id="b_title"></span>
                             </div>
                         </div>
                         <div>
@@ -91,7 +90,7 @@
                                 </div>
                             </div>
                             <div>
-                                <span id="b-artist"></span>
+                                <span id="b_artist"></span>
                             </div>
                         </div>
                     </div>
@@ -162,7 +161,8 @@
 
 </script>
 <canvas id='monesFollowingEffect'></canvas>
-
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
 <script type="text/javascript" src="/js/lib/monesFollowingEffects.js"></script>
 <script type="text/javascript" src="/js/lib/atomactive​.js"></script>
 <script>

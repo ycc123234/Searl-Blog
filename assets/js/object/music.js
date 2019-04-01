@@ -7,8 +7,8 @@ class Music {
                 writable: false,
                 enumerable: true
             },
-            resJson: {
-                writable: false,
+            data: {
+                writable: true,
                 enumerable: true
             },
             _status: {
@@ -30,25 +30,19 @@ class Music {
         }
     }
     init() {
-
         this.initBGM(this.url);
     }
     initBGM(...params) {
         //if params is url ,params request body.else return music json
-        // console.log('typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.le');
-
         if (Object.prototype.toString.call(params[0]).toLowerCase() == "[object array]" && params[0].length) {
-
-            console.log(params[0]);
-
+            this.data=params[0];
+            console.log(this.data)
         } else {
             this.getBGM(params[0]);
         }
-
     }
     getBGM(url) {
         var xhr = createXhr();
-
         xhr.open("get", url, true);
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -59,7 +53,7 @@ class Music {
         }
         xhr.send(null);
     }
-
+   
 
     // this = Object.freeze(this.prototype)
 }
